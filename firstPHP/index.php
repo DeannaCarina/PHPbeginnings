@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>PHP Beginnings</title>
 </head>
 <body>
@@ -81,7 +82,36 @@
             <strong>NOTE:</strong> If you want to nest a variable within a string, you MUST use double quotations. Single quotations will show the variable code as a text output.
         </p>
     </div>
+
+    <h2 style="font-size:2.5rem">PHP Lesson 3 - Conditionals and Booleans</h2>
+    <div>
+
+        
+
+        <?php 
+        $book = "Harry Potter";
+        $read = false;
+
+        if ($read == true) {
+            $message = "You have read $book";
+        } else {
+            $message = "You have not read $book";
+        }
+
+        ?>
+
+        <p>
+            <?php 
+                echo $message;
+            ?>
+            <?= $message ?>
+            <p>
+                Writing "<<span>?php echo" can also be written as "<<span>?="
+            </p>
+        </p>
+    </div>
     
     
 </body>
 </html>
+
