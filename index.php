@@ -13,6 +13,14 @@
             echo "Hello world!";
         ?>
     </h1>
+    <p>
+        <strong>SETUP:</strong>
+        <ol>
+            <li>brew install php</li>
+            <li>brew install mysql</li>
+            <li>php -S localhost:8000</li>
+        </ol>
+    </p>
 
     <h2 style="font-size:2.5rem">PHP Lesson 1 - the PHP tags</h2>
     <div>
@@ -24,11 +32,6 @@
         <p>
             <?php 
                 echo "This is me learning PHP, hoping not to royally mess it up. I have experience with HTML and CSS, but this is new territory!";
-            ?>
-        </p>
-        <p>
-            <?php 
-                echo "To run this code in a browser type: 'php -S localhost:8000' in the terminal.";
             ?>
         </p>
         <p>
@@ -85,17 +88,14 @@
 
     <h2 style="font-size:2.5rem">PHP Lesson 3 - Conditionals and Booleans</h2>
     <div>
-
-        
-
         <?php 
-        $book = "Harry Potter";
+        $name = "Harry Potter";
         $read = false;
 
         if ($read == true) {
-            $message = "You have read $book";
+            $message = "You have read $name";
         } else {
-            $message = "You have not read $book";
+            $message = "You have not read $name";
         }
 
         ?>
@@ -109,6 +109,40 @@
                 Writing "<<span>?php echo" can also be written as "<<span>?="
             </p>
         </p>
+    </div>
+
+    <h2 style="font-size:2.5rem">PHP Lesson 4 - Arrays</h2>
+    <div>
+        <?php 
+
+            $books = [
+                "Eragon",
+                "Eldest",
+                "Brisingr",
+                "Inheritance"
+            ];
+
+        ?>
+
+        <ul>
+            <?php 
+                foreach ($books as $book) {
+                    echo "<li>$book</li>";
+                }
+            ?>
+<br><br>
+            <?php foreach ($books as $book) : ?>
+                <li><?= $book ?></li>
+            <?php endforeach; ?>
+
+
+        </ul>
+
+    </div>
+
+    <h2 style="font-size:2.5rem">PHP Lesson 5 - Associative Arrays</h2>
+        
+
     </div>
     
     
