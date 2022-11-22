@@ -141,8 +141,76 @@
     </div>
 
     <h2 style="font-size:2.5rem">PHP Lesson 5 - Associative Arrays</h2>
-        
+        <p>Interacting with a specific value from an array, for example 'Eldest' from the 'books' array:</p>
+        <p><strong style="font-size:2rem; color:red;"><<span style="display:none">.</span>?= $books[1] ?></strong><br>
+        REMEMBER: Lists in PHP are zero based, i.e start at 0!<p>
 
+        <?= $books[1] ?><br><br>
+
+        <p>If we want to add more information to our arrays, we can add a sub-array with book specific information in each:</p>
+        <p><strong style="font-size:2rem; color:red;"><<span style="display:none">.</span>?php $books = [<br>
+        .... [<br>
+        .... 'Eragon',<br>
+        .... 'Saphira',<br>
+        .... ],<br>
+        .... [<br>
+        .... 'Eldest',<br>
+        .... 'Thorn',<br>
+        .... ],<br>
+        .... [<br>
+        .... 'Brisingr',<br>
+        .... 'Glaedr',<br>
+        .... ],<br>
+        .... [<br>
+        .... 'Inheritance',<br>
+        .... 'Firnen',<br>
+        .... ],<br>
+        ];    
+    </strong><br>
+    <p>However, there's no way of knowing for the user or for long-term maintenance what certain parts of the array are referring to. E.g. what are Saphira/Thorn/Glaedr/Firnen?<br>
+We can add more information <strong>MUCH LIKE A DICTIONARY IN PYTHON</strong> with associated key-value pairs. <strong>NOTE: PHP uses camelcase (much the same as JavaScript!).</strong></p>
+<p><strong style="font-size:2rem; color:red;"><<span style="display:none">.</span>?php $books = [<br>
+        .... [<br>
+        .... 'bookNumber' => 'First',<br>
+        .... 'bookName' => 'Eragon',<br>
+        .... 'dragonName' => 'Saphira'<br>
+        ....],  <br>
+        .... [<br>
+        .... 'bookNumber' => 'Second',<br>
+        .... 'bookName' => 'Eldest',<br>
+        .... 'dragonName' => 'Thorn'<br>
+        ....],<br>
+        ];
+    </strong><br>
+<?php $books = [
+    [
+        "bookNumber" => "First",
+        "bookName" => "Eragon",
+        "dragonName" => "Saphira"
+    ],
+    [
+        "bookNumber" => "Second",
+        "bookName" => "Eldest",
+        "dragonName" => "Thorn"
+    ],
+    [
+        "bookNumber" => "Third",
+        "bookName" => "Brisingr",
+        "dragonName" => "Glaedr"
+    ],
+    [
+        "bookNumber" => "Fourth",
+        "bookName" => "Inheritance",
+        "dragonName" => "Firnen"
+    ],
+];
+?>
+<ul>
+    <?php foreach ($books as $book) : ?>
+        <li>The <strong><?= $book['bookNumber']; ?></strong> in Christopher Paolini's Inheritance Cycle series is <strong><?= $book['bookName']; ?></strong> 
+        and the dragon in this book is called <strong><?= $book['dragonName']; ?></strong> </li>
+    <?php endforeach; ?>
+</ul>
     </div>
     
     
